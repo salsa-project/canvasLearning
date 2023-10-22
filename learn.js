@@ -146,6 +146,7 @@ function update1(){
 //-------- animation 2
 
 const img = document.getElementById("source");
+img.style.display = 'block';
 const player = {
     w: 50,
     h: 70, 
