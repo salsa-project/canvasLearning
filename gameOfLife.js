@@ -46,7 +46,7 @@ function roundedNumber(floatNumber){
     return parseFloat(floatNumber.toFixed(6)); // 5 number after comma
 }
 
-function grids() {
+function gridsPlanner() {
     for (let i = 0; i < columns.qte; i++) {
         currentGridsArray.push({x: columns.x, y: columns.y, isAlive: getRandomBoolean(), neighbors:{cellsIndex: [], count: null}})
         columns.x += gridSizeW
@@ -70,8 +70,9 @@ function renderGrids(){
     }
 }
 function init(){
-    grids()
+    gridsPlanner()
 }
+init()
 /*
 class Grid{
     constructor(){
@@ -111,11 +112,11 @@ let start = performance.now()
 let end = performance.now()
 console.log(end-start)
 */
-init()
-
+/*
 function findIndexByXY(array, x, y) {
     return array.findIndex(item => item.x === x && item.y === y);
 }
+*/
 function checkForWalls(currentCell, skippedChars){
     if(currentCell.y === 0){
             skippedChars.push('t','rt','lt')

@@ -2,7 +2,8 @@ body{
     padding: 0px;
 }
 #canvas1{
-    background: white;
+    background: lightgoldenrodyellow;
+    border-radius: 5px;
 }
 #source{
     display: none;
