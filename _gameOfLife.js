@@ -13,12 +13,12 @@ let canvasH = 650
 let columns = {
     x: 0,
     y: 0,
-    qte: 200
+    qte: 300
 }
 let rows = {
     x: 0,
     y: 0,
-    qte: 200
+    qte: 300
 }
 let currentGridsArray = []
 let nextGridsArray = []
@@ -47,6 +47,7 @@ function roundedNumber(floatNumber){
 }
 
 function gridsPlanner() {
+    // o notaion: o(n²)
     for (let i = 0; i < columns.qte; i++) {
         currentGridsArray.push({x: columns.x, y: columns.y, isAlive: getRandomBoolean(), neighbors:{cellsIndex: [], count: null}})
         columns.x += gridSizeW
@@ -59,6 +60,7 @@ function gridsPlanner() {
     }
 }
 function renderGrids(){
+    // o notaion: o(n)
     for (let i = 0; i < currentGridsArray.length; i++) {
         ctx.beginPath()
         ctx.rect(currentGridsArray[i].x, currentGridsArray[i].y, gridSizeW, gridSizeH)
@@ -195,16 +197,17 @@ function update(){
         }
     }
 }
-
+/*
 setInterval(()=>{
+},50)
+*/
+function animate(){
     clearCanvas()
     countNeighbors()
     update()
-},50)
-function animate(){
     requestAnimationFrame(animate)
 }
-//animate()
+animate()
 
 
 //console.log(currentGridsArray)
